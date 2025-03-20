@@ -1,7 +1,9 @@
 # Kids Park <!-- change this to your website name -->
 
 I built this website while working as a volunteer instructor in the Front-End Developer Fundamentals course.
-The work was part of a volunteer group of young Syrians called "Syria Towards the Digital Revolution."
+<br>
+The work was part of a volunteer group of young Syrians called "Syria Towards the Digital Revolution".
+<br>
 I designed the website myself for use during the course.
 
 ## Used
