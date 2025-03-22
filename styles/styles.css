@@ -19,30 +19,3 @@
   src: url(../fonts/DeliusUnicase-Bold.woff2), url(../fonts/DeliusUnicase-Bold.woff);
   font-weight: 700;
 }
-
-:root {
-  --first-letter-color: red;
-
-  --h1-size: 60px;
-  --them-color: yellow;
-}
-
-header {
-  --color: green;
-}
-
-h1 {
-  font-size: var(--h1-size);
-}
-
-#menu {
-  background-color: var(--color);
-}
-
-h1::first-letter {
-  color: var(--first-letter-color);
-}
-
-main {
-  background-color: var(--color);
-}
