@@ -1,0 +1,3 @@
+button:nth-of-type(2) {
+  background-color: var(--them-color);
+}

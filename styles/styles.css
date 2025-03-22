@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "DeliusSwashCaps";
+  src: url(../fonts/DeliusSwashCaps-Regular.woff2), url(../fonts//DeliusSwashCaps-Regular.woff);
+}
+
+@font-face {
+  font-family: "Delius";
+  src: url(../fonts/Delius-Regular.woff2), url(../fonts/Delius-Regular.woff);
+}
+
+@font-face {
+  font-family: "DeliusUnicase";
+  src: url(../fonts/DeliusUnicase-Regular.woff2), url(../fonts/DeliusUnicase-Regular.woff);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "DeliusUnicase-bold";
+  src: url(../fonts/DeliusUnicase-Bold.woff2), url(../fonts/DeliusUnicase-Bold.woff);
+  font-weight: 700;
+}
+
+:root {
+  --first-letter-color: red;
+
+  --h1-size: 60px;
+  --them-color: yellow;
+}
+
+header {
+  --color: green;
+}
+
+h1 {
+  font-size: var(--h1-size);
+}
+
+#menu {
+  background-color: var(--color);
+}
+
+h1::first-letter {
+  color: var(--first-letter-color);
+}
+
+main {
+  background-color: var(--color);
+}
