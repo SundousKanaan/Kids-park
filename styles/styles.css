@@ -1,0 +1,70 @@
+@font-face {
+  font-family: "Delius";
+  src: url(../fonts/Delius-Regular.woff2), url(../fonts/Delius-Regular.woff);
+}
+
+@font-face {
+  font-family: "DeliusSwashCaps";
+  src: url(../fonts/DeliusSwashCaps-Regular.woff2), url(../fonts//DeliusSwashCaps-Regular.woff);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "DeliusUnicase";
+  src: url(../fonts/DeliusUnicase-Regular.woff2), url(../fonts/DeliusUnicase-Regular.woff);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "DeliusUnicase-bold";
+  src: url(../fonts/DeliusUnicase-Bold.woff2), url(../fonts/DeliusUnicase-Bold.woff);
+  font-weight: 700;
+}
+
+:root {
+  --primary-font: "DeliusSwashCaps", cursive;
+  --secondary-font: "Delius", cursive;
+  --tertiary-font: "DeliusUnicase", cursive;
+
+  --regular-weight: 400;
+  --bold-weight: 700;
+
+  --theme-color: #ce0000;
+  --seconary-color: #000000;
+  --tertiary-color: #ffffff;
+}
+
+h1 {
+  font-family: var(--primary-font);
+  font-size: 2.5rem;
+  font-weight: var(--regular-weight);
+}
+
+h1::first-letter {
+  color: var(--theme-color);
+}
+
+h2 {
+  font-family: var(--secondary-font);
+  font-weight: var(--regular-weight);
+}
+
+h2::first-letter {
+  color: var(--theme-color);
+}
+
+p {
+  font-family: var(--secondary-font);
+  font-weight: var(--regular-weight);
+}
+
+h3 {
+  font-family: var(--secondary-font);
+  font-weight: var(--regular-weight);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
