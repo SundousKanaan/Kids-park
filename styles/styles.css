@@ -34,9 +34,22 @@
   --theme-color: #ce0000;
   --seconary-color: #000000;
   --tertiary-color: #ffffff;
+  --website-bg: #ffffff;
+
+  --header-bg: #ce0000;
+  --form-bg: #ffffff46;
+
+  /* dark mode */
+  /* --website-bg: #4d4d4d; */
+  /* --header-bg: #838383; */
 }
 
 /* global styles */
+
+body {
+  background-color: var(--website-bg);
+}
+
 h1 {
   font-family: var(--primary-font);
   font-size: 2.5rem;
