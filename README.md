@@ -12,6 +12,31 @@ I designed the website myself for use during the course.
 - CSS
 - JS
 
+## Todo list
+
+### CSS
+
+- [x] Fix the header styles
+- [x] Fix the footer styles
+- [ ] Fix the footer styles for ipad & pc
+- [ ] Fix the nav styles in mobile size
+- [ ] Fix the nav styles in pc size
+- [ ] Fix the elements postions (navbar on mobile, header, To Top button)
+- [x] Fix flexbox containers
+- [ ] Fix grid containers
+- [ ] Fix the section 1 pc size
+- [ ] Fix the zones titels
+- [ ] Fix the space between sections
+- [ ] Fix the tickets scroll list
+- [ ] Add states for the buttons and links <a>
+
+### JS
+
+- [ ] Open / close navbar oo mobile & ipad
+- [ ] Add dark mode
+- [ ] Get data from API? <!-- https://amiiboapi.com/ -->
+- [ ] Set the data on a HTML page
+
 <!-- ## Icons and Images
 
 ### Icons

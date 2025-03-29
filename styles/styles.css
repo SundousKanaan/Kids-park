@@ -34,10 +34,15 @@
   --theme-color: #ce0000;
   --seconary-color: #000000;
   --tertiary-color: #ffffff;
+
   --website-bg: #ffffff;
+  --light-theme-color: #ff8c8e;
 
   --header-bg: #ce0000;
   --form-bg: #ffffff46;
+  --footer-bg: #333333;
+
+  --border-radius: 0.5em;
 
   /* dark mode */
   /* --website-bg: #4d4d4d; */
@@ -45,6 +50,17 @@
 }
 
 /* global styles */
+html,
+html * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*   box-sizing? */
+/* box-sizing property allows us to include the padding and border in an element's total width and height. */
+/* By default, the width and height of an element is calculated like this:
+width + padding + border = actual width of an element
+height + padding + border = actual height of an element */
 
 body {
   background-color: var(--website-bg);
@@ -52,17 +68,22 @@ body {
 
 h1 {
   font-family: var(--primary-font);
-  font-size: 2.5rem;
+  font-size: 2em;
   font-weight: var(--regular-weight);
+  margin: 0;
 }
 
-h1::first-letter {
-  color: var(--theme-color);
+h1 span {
+  color: var(--tertiary-color);
 }
 
 h2 {
   font-family: var(--secondary-font);
   font-weight: var(--regular-weight);
+  text-align: center;
+  font-size: 2em;
+
+  margin-bottom: 0.2em;
 }
 
 h2::first-letter {
@@ -83,4 +104,275 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+/* TODO: delete this img styles later */
+/* 1em = 16px */
+img {
+  width: 10em;
+}
+
+/* header styles */
+header {
+  width: 100%;
+  height: 4em;
+
+  display: flex; /* flex default direction is row */
+  justify-content: space-between; /* default value is start */
+  align-items: center; /* default value is stretch */
+  padding: 0 1em; /* top and bottom padding is 0, left and right padding is 1em */
+  background-color: var(--header-bg);
+}
+
+header button {
+  --size: 2em;
+  width: var(--size);
+  height: var(--size);
+
+  background-color: transparent;
+  border: none;
+}
+
+header button:first-of-type {
+  order: -1; /* default value is 0 */
+}
+
+header button img {
+  width: 100%;
+}
+
+main section {
+  width: 100;
+}
+
+/* main atyles */
+
+main {
+  padding: 1em; /* padding around the main element for all sides */
+}
+
+/* ***************** */
+/* section 1 : intro*/
+/* ***************** */
+
+main section:first-of-type {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+main section:first-of-type > div:first-of-type {
+  width: 25em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  gap: 0.5em;
+}
+
+main section:first-of-type div:first-of-type p:first-of-type {
+  font-family: var(--secondary-font);
+  font-weight: var(--regular-weight);
+  font-size: 1.8em;
+}
+
+main section:first-of-type div:first-of-type p:nth-of-type(2) {
+  font-family: var(--secondary-font);
+  font-weight: var(--regular-weight);
+  font-size: 1em;
+}
+
+main section:first-of-type > div:first-of-type div {
+  width: 100%;
+  height: 4em;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+}
+
+main section:first-of-type > div:first-of-type div a,
+main section:first-of-type > div:first-of-type div button {
+  font-family: var(--tertiary-font);
+  font-weight: var(--bold-weight);
+  font-size: 0.8em;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  border: solid 0.2em var(--theme-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.5);
+}
+
+main section:first-of-type > div:first-of-type div a img,
+main section:first-of-type > div:first-of-type div button img {
+  --size: 1.8em; /* this is a custom property for the size of the image */
+  width: var(--size);
+  height: var(--size);
+}
+
+main section:first-of-type > div:first-of-type div a {
+  color: var(--tertiary-color);
+  text-decoration: none;
+  border: none;
+  background-color: var(--theme-color);
+}
+
+main section:first-of-type > div:first-of-type p:nth-of-type(3) {
+  font-size: 1.3em;
+  font-weight: var(--bold-weight);
+  text-align: center;
+  order: 1;
+}
+
+main section:first-of-type > div:first-of-type ul {
+  background-color: var(--light-theme-color);
+  width: 100%;
+  height: 3.5em;
+  margin-top: 0.5em;
+  order: 1; /* this element has flex parent so it can be ordered */
+
+  display: flex; /* this element is also a flex container */
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 0.5em;
+
+  border-radius: var(--border-radius);
+}
+
+main section:first-of-type > div:first-of-type ul li {
+  width: 2.5em;
+  height: 2.5em;
+}
+
+main section:first-of-type > div:first-of-type ul li img {
+  width: 100%;
+  height: 100%;
+}
+
+/* the cover image div  */
+main section:first-of-type > div:last-of-type {
+  order: -1;
+  background-color: rgb(4, 0, 255);
+  width: 25em;
+  height: 17em;
+
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+main section:first-of-type > div:last-of-type img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ***************** */
+/* section 2 : zones */
+/* ***************** */
+
+/* the h2 style are already defined above in the "global styles"  */
+
+main section:nth-of-type(2) ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+}
+
+main section:nth-of-type(2) ul li {
+  width: 10em;
+  height: 10em;
+
+  border-radius: var(--border-radius);
+  overflow: hidden; /* this will hide the overflow of the element content*/
+}
+
+/* TODO: we wil fix this in the "Postions" les */
+main section:nth-of-type(2) ul li h3 {
+  color: var(--tertiary-color);
+  display: none;
+}
+/*  TODO ****************************************/
+
+main section:nth-of-type(2) ul li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* *************** */
+/* section 3 : map */
+/* *************** */
+
+/* the h2 style are already defined above in the "global styles"  */
+
+/* ******************* */
+/* section 4 : tickets */
+/* ******************* */
+
+/* the h2 style are already defined above in the "global styles"  */
+
+/* ************* */
+/* footer styles */
+/* ************* */
+
+footer {
+  padding: 2.5em 0; /* top and bottom padding is 2.5em, left and right padding is 0 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+
+  background-color: var(--footer-bg);
+}
+
+footer nav {
+  width: 15em;
+}
+
+footer nav h3 {
+  font-family: var(--secondary-font);
+  font-weight: var(--regular-weight);
+  font-size: 1.5em;
+  text-align: center;
+  color: var(--tertiary-color);
+}
+
+footer nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7em;
+  padding: 0.5em;
+}
+
+footer nav ul li a {
+  display: block;
+  width: 100%;
+  color: var(--tertiary-color);
+  font-family: var(--secondary-font);
+  font-weight: var(--regular-weight);
+  font-size: 1em;
+  text-align: center;
+
+  line-height: 1.5em;
+  /* line-height? */
+  /* the line-height property specifies the height of a line box */
+
+  text-underline-position: under;
+  /* text-underline-position? */
+  /* the text-underline-position property specifies the position of the underline */
+  /* under value will place the underline below the alphabetic baseline */
+  /* auto value is the default value and the browser will choose the best position for the underline */
 }
