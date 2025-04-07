@@ -1,3 +1,5 @@
+/* Note: contact page styles are after the footer styles */
+
 /* fonts */
 @font-face {
   font-family: "Delius";
@@ -112,7 +114,9 @@ img {
   width: 10em;
 }
 
+/* *************** */
 /* header styles */
+/* *************** */
 header {
   width: 100%;
   height: 4em;
@@ -145,7 +149,77 @@ main section {
   width: 100;
 }
 
+/* *************** */
+/* navbar */
+/* *************** */
+header nav {
+  background-color: var(--theme-color);
+
+  position: fixed; /* this will make the element position absolute in the body */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  transform: translateX(-100%);
+}
+
+header nav > button {
+  width: 4em;
+  height: 4em;
+
+  color: white;
+
+  position: absolute;
+  right: 2.5em;
+  top: 3em;
+}
+
+header nav > button img {
+  width: 60%;
+}
+
+header nav ul {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+}
+
+header nav ul li {
+  width: 17em;
+  height: 3em;
+  border-radius: var(--border-radius);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header nav ul li.active {
+  color: var(--seconary-color);
+  background-color: var(--tertiary-color);
+}
+
+header nav ul li.active a {
+  color: var(--seconary-color);
+}
+
+header nav ul li a {
+  text-decoration: none;
+  font-family: var(--tertiary-font);
+  font-size: 1.5em;
+  color: var(--tertiary-color);
+  text-transform: capitalize;
+}
+
+/* *************** */
 /* main atyles */
+/* *************** */
 
 main {
   padding: 1em; /* padding around the main element for all sides */
@@ -207,6 +281,7 @@ main section:first-of-type > div:first-of-type div button {
   border: solid 0.2em var(--theme-color);
   border-radius: var(--border-radius);
   box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.5);
+  background-color: var(--tertiary-color);
 }
 
 main section:first-of-type > div:first-of-type div a img,
@@ -321,6 +396,56 @@ main section:nth-of-type(2) ul li img {
 
 /* the h2 style are already defined above in the "global styles"  */
 
+main section:nth-of-type(4) ul {
+  padding: 0.5em 0 1em 0; /* top is 0.5em, right is 0, bottom is 1em, left is 0 */
+
+  /* flexbox */
+  display: flex;
+  gap: 0.5em;
+
+  /* scroll */
+  overflow: auto; /* this will add a scrollbar to the element if the content need it on X or Y or both*/
+  scroll-snap-type: x mandatory; /* this will make the scroll snap to the nearest element */
+}
+
+main section:nth-of-type(4) ul li {
+  width: 10em;
+  height: 8.5em;
+  border-radius: var(--border-radius);
+  background-color: var(--light-theme-color);
+
+  /* stop shrink from parent element */
+  flex-shrink: 0; /* this will prevent the element from shrinking */
+
+  /* flex container */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+
+  /* scroll */
+  scroll-snap-align: start; /* this will make the element snap to the nearest element when scrolling */
+}
+
+main section:nth-of-type(4) ul li h3 {
+  font-family: var(--secondary-font);
+  font-weight: var(--regular-weight);
+  font-size: 2em;
+}
+
+main section:nth-of-type(4) ul li p:first-of-type {
+  font-family: var(--secondary-font);
+  font-weight: var(--regular-weight);
+  font-size: 1em;
+}
+
+main section:nth-of-type(4) ul li p:last-of-type {
+  font-family: var(--primary-font);
+  font-weight: var(--regular-weight);
+  font-size: 2em;
+}
+
 /* ************* */
 /* footer styles */
 /* ************* */
@@ -375,4 +500,34 @@ footer nav ul li a {
   /* the text-underline-position property specifies the position of the underline */
   /* under value will place the underline below the alphabetic baseline */
   /* auto value is the default value and the browser will choose the best position for the underline */
+}
+
+/* ************ */
+/* contact page */
+/* ************ */
+
+form {
+  padding: 3em;
+}
+
+form input:not(:last-of-type) {
+  display: none;
+}
+
+form:has(input[id="1"]:checked) label[for="1"] {
+  background-color: var(--theme-color);
+  color: var(--tertiary-color);
+}
+
+form:not(input[id="2"]:checked) label[for="2"] {
+  background-color: green;
+  color: var(--tertiary-color);
+}
+
+form:has(input[id="2"]:checked) label[for="2"] {
+  background-color: var(--theme-color);
+  color: var(--tertiary-color);
+}
+
+section ul:not(:hover) li {
 }

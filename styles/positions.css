@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+
+  padding: 6em 0 50em 0;
+}
+
+h2 {
+  margin-top: 2em;
+  text-transform: capitalize;
+}
+
+ul {
+  width: 80%;
+  height: 20em;
+  list-style: none;
+  background-color: rgba(0, 157, 255, 0.446);
+  border: solid 0.3em black;
+
+  display: flex;
+  gap: 1em;
+}
+
+ul li {
+  width: 5em;
+  height: 5em;
+  background-color: red;
+
+  font-size: 2em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: solid 0.1em black;
+}
+
+/* **************** */
+/* position static */
+/* **************** */
+
+ul:first-of-type li {
+  position: static; /* default property */
+  top: 5em; /* does not work */
+  left: 5em; /* does not work */
+}
+
+/* **************** */
+/* position relative */
+/* **************** */
+ul:nth-of-type(2) li:first-of-type {
+  background-color: greenyellow;
+  position: relative;
+  top: 30%;
+  left: -10%;
+}
+
+ul:nth-of-type(2) li:nth-of-type(2) {
+  background-color: brown;
+  position: relative;
+  right: 10%;
+  bottom: -45%;
+}
+
+/* **************** */
+/* position absolute */
+/* **************** */
+ul:nth-of-type(3) {
+  position: relative; /* parent of absolute element */
+
+  background-image: conic-gradient(#ff0000 0deg 90deg, #00ff00 90deg 180deg, #0000ff 180deg 270deg, #ffff00 270deg);
+}
+
+ul:nth-of-type(3) li:first-of-type {
+  background-color: rgb(0, 0, 255);
+  position: absolute; /* absolute to parent */
+  right: 20px;
+  bottom: -20px;
+  left: 10em;
+}
+
+ul:nth-of-type(3) li:nth-of-type(2) {
+  background-color: green;
+  /* set the element in the center of the parent element */
+  position: absolute;
+  left: 50%; /* not goed because of the width of the element */
+  left: calc(50% - 5em / 2);
+  top: calc(50% - 5em / 2);
+
+  background-image: conic-gradient(green 0deg 90deg, red 90deg 180deg, hotpink 180deg 270deg, blue 270deg);
+}
+
+/* **************** */
+/* position fixed */
+/* **************** */
+
+ul:nth-of-type(4) li {
+  position: fixed; /* fixed to the viewport */
+  top: 10%;
+  right: -3%;
+}
+
+/* **************** */
+/* position sticky */
+/* **************** */
+ul:nth-of-type(5) {
+  flex-direction: column;
+}
+ul:nth-of-type(5) li {
+  width: 100%;
+}
+
+ul:nth-of-type(5) li:first-of-type {
+  width: 50%;
+  background-color: green;
+  position: sticky;
+  top: 5%;
+}
+
+/* **************** */
+/* z-index property */
+/* **************** */
+
+ul:nth-of-type(6) li:first-of-type {
+  position: relative;
+  z-index: 1;
+}
+
+ul:nth-of-type(6) li:nth-of-type(2) {
+  position: relative;
+  left: -10%;
+  bottom: -10%;
+  background-color: green;
+  /* default z-index is 0 */
+}
+
+ul:nth-of-type(6) li:nth-of-type(3) {
+  position: relative;
+  left: -35%;
+  bottom: -45%;
+  background-color: blue;
+  z-index: 2;
+}
