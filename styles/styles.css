@@ -36,6 +36,7 @@
   --theme-color: #ce0000;
   --seconary-color: #000000;
   --tertiary-color: #ffffff;
+  --tertiary-color-light: #ffffffbc;
 
   --website-bg: #ffffff;
   --light-theme-color: #ff8c8e;
@@ -71,6 +72,28 @@ height + padding + border = actual height of an element */
 
 body {
   background-color: var(--website-bg);
+}
+
+#toTop {
+  display: block;
+  width: 3em;
+  height: 3em;
+
+  position: fixed;
+  right: 1em;
+  bottom: 2em;
+  z-index: 9999; /* this will make the element on top of the other elements */
+  background-color: var(--tertiary-color-light);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(0.2em);
+}
+
+#toTop img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
 }
 
 h1 {
@@ -369,6 +392,34 @@ main section:first-of-type > div:first-of-type ul {
 main section:first-of-type > div:first-of-type ul li {
   width: 2.5em;
   height: 2.5em;
+
+  animation-name: jumping, rotation;
+  animation-duration: 1s, 1.5s;
+  animation-iteration-count: 1, infinite;
+  animation-delay: 2s, 3.5s;
+  /* rotation delay = first-animation-delay  + first-animation-duration  */
+  transform: translateY(0) scaleY(1) scaleX(1);
+}
+
+@keyframes jumping {
+  0% {
+    transform: translateY(16px) scaleY(0.5) scaleX(1.1);
+  }
+  50% {
+    transform: translateY(-14px) scaleY(1.5) scale(0.8);
+  }
+  100% {
+    transform: translateY(16px) scaleY(0.5) scaleX(1.1);
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 main section:first-of-type > div:first-of-type ul li img {
@@ -728,6 +779,9 @@ form:has(input[id="2"]:checked) label[for="2"] {
 }
 
 @media screen and (min-width: 1279px) {
+  #toTop {
+    display: none;
+  }
   header {
     gap: 3em;
 
