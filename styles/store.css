@@ -1,0 +1,75 @@
+#store {
+  color: black;
+}
+
+#store ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+
+  margin: 2em 0;
+}
+
+#store ul li {
+  flex-shrink: 0;
+  width: 18em;
+  background-color: var(--tertiary-color);
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
+  padding: 16px 20px;
+  border-radius: 12px;
+  text-transform: capitalize;
+}
+
+#store ul li h3 {
+  font-weight: bold;
+}
+
+#store ul:first-of-type li {
+  border-left: 6px solid var(--theme-color);
+}
+
+#store ul:nth-of-type(2) {
+  background-color: "pink";
+}
+
+#store ul:nth-of-type(2) li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+
+  position: relative;
+  background-color: rgb(231, 231, 231);
+}
+
+#store ul:nth-of-type(2) li p:first-of-type {
+  position: absolute;
+  top: 2em;
+  left: 2.5em;
+
+  border-radius: 0.5em;
+  padding: 0.2em 0.5em;
+  background-color: var(--theme-color);
+  color: var(--tertiary-color);
+  font-weight: bold;
+  font-size: 0.8em;
+}
+
+#store ul:nth-of-type(2) li div {
+  order: -1;
+  width: 100%;
+  height: 15em;
+  border-radius: 12px;
+
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
+  background-color: var(--tertiary-color);
+}
+
+#store ul:nth-of-type(2) li div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}

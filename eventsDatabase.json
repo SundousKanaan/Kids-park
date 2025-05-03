@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "christmas",
+    "start_date": "2025-12-25",
+    "end_date": "2025-12-26",
+    "online": true,
+    "typePokemons": ["fire", "ice", "flying", "ghost"],
+    "quantity": 5
+  },
+  {
+    "id": 2,
+    "name": "halloween",
+    "start_date": "2025-10-31",
+    "end_date": "2025-11-01",
+    "online": true,
+    "typePokemons": ["ghost", "dark", "psychic"],
+    "quantity": 2
+  },
+  {
+    "id": 3,
+    "name": "kids day",
+    "start_date": "2025-05-01",
+    "end_date": "2025-05-02",
+    "online": false,
+    "typePokemons": ["normal", "fairy", "grass"],
+    "quantity": 7
+  },
+  {
+    "id": 4,
+    "name": "pokemon day",
+    "start_date": "2025-02-27",
+    "end_date": "2025-02-28",
+    "online": false,
+    "typePokemons": ["water", "grass", "fire", "electric"],
+    "quantity": 3
+  },
+  {
+    "id": 5,
+    "name": "valentine",
+    "start_date": "2025-02-14",
+    "end_date": "2025-02-15",
+    "online": true,
+    "typePokemons": ["fairy", "fighting", "psychic"],
+    "quantity": 4
+  },
+  {
+    "id": 6,
+    "name": "easter",
+    "start_date": "2025-04-20",
+    "end_date": "2025-04-21",
+    "online": true,
+    "typePokemons": ["grass", "bug", "flying"],
+    "quantity": 6
+  }
+]

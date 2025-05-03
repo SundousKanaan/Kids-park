@@ -30,6 +30,8 @@
   --secondary-font: "Delius", cursive;
   --tertiary-font: "DeliusUnicase", cursive;
 
+  --font-color: #000000;
+
   --regular-weight: 400;
   --bold-weight: 700;
 
@@ -72,11 +74,13 @@ height + padding + border = actual height of an element */
 
 body {
   background-color: var(--website-bg);
+  color: var(--font-color);
 }
 
 body.darkMode {
   --website-bg: #4d4d4d;
   --header-bg: #838383;
+  --font-color: #ffffff;
 }
 
 #toTop {
