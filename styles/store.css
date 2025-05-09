@@ -2,6 +2,12 @@
   color: black;
 }
 
+@media screen and (min-width: 1680px) {
+  #store {
+    padding: 7em 15% 0 15%;
+  }
+}
+
 #store ul {
   display: flex;
   flex-wrap: wrap;
@@ -19,6 +25,16 @@
   padding: 16px 20px;
   border-radius: 12px;
   text-transform: capitalize;
+}
+
+@media screen and (min-width: 1680px) {
+  #store ul:first-of-type {
+    gap: 1.5em;
+  }
+
+  #store ul:first-of-type li {
+    width: 36em;
+  }
 }
 
 #store ul li h3 {

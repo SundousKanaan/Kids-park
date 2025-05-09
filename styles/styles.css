@@ -45,10 +45,12 @@
 
   --header-bg: #ce0000;
   --form-bg: #ffffff46;
-  --footer-bg: #333333;
+  --input-bg: #eeeeee;
 
+  --footer-bg: #333333;
   --border-radius: 0.5em;
-  --box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+  --shadow-color: rgba(0, 0, 0, 0.25);
+  --box-shadow: 0 0 4px var(--shadow-color);
 }
 
 /* dark mode colors*/
@@ -711,28 +713,163 @@ footer nav ul li a {
 /* ************ */
 /* contact page */
 /* ************ */
-
-form {
-  padding: 3em;
+#contactPage > section {
+  margin-bottom: 3em;
 }
 
-form input:not(:last-of-type) {
-  display: none;
-}
-
-form:has(input[id="1"]:checked) label[for="1"] {
+#contactPage > section:first-of-type a {
+  width: 100%;
+  height: 3em;
+  text-decoration: none;
+  font-family: var(--tertiary-font);
+  font-weight: var(--bold-weight);
+  color: var(--tertiary-color);
   background-color: var(--theme-color);
-  color: var(--tertiary-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 0.25em 0.25em var(--shadow-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
 }
 
-form:not(input[id="2"]:checked) label[for="2"] {
-  background-color: green;
-  color: var(--tertiary-color);
+#contactPage > section a img {
+  width: 1.25em;
+  height: 1.25em;
 }
 
-form:has(input[id="2"]:checked) label[for="2"] {
+#contactPage > section:nth-of-type(2) div {
+  margin-top: 0.5em;
+  display: flex;
+  gap: 1em;
+}
+
+#contactPage > section:nth-of-type(2) div a:first-of-type {
+  flex-grow: 1;
+}
+
+#contactPage > section:nth-of-type(2) div a:last-of-type {
+  flex-grow: 2;
+}
+
+#contactPage > section:nth-of-type(2) div a {
+  width: fit-content;
+  height: 4em;
+  text-decoration: none;
+  font-family: var(--tertiary-font);
+  font-weight: var(--bold-weight);
+  font-size: 0.7em;
+  background-color: var(--tertiary-color);
+  color: var(--theme-color);
+  border: solid 0.2em var(--theme-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 0.3em 0.25em var(--shadow-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8em;
+
+  text-wrap: nowrap;
+}
+
+#contactPage > section:nth-of-type(2) div a img {
+  fill: var(--theme-color);
+}
+
+#contactPage form {
+  margin-top: 0.5em;
+  padding: 1em;
+  border: solid 0.13em var(--theme-color);
+  border-radius: var(--border-radius);
+  background-color: var(--form-bg);
+}
+
+#contactPage form label,
+#contactPage form input {
+  width: 100%;
+  font-family: var(--secondary-font);
+
+  border: none;
+  border-radius: 0.3em;
+}
+
+#contactPage form label {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+
+#contactPage form input {
+  background-color: var(--input-bg);
+  height: 3em;
+  text-indent: 0.8em;
+}
+
+#contactPage form label:has(input[type="email"]) {
+  width: 100%;
+}
+
+#contactPage form fieldset {
+  width: 100%;
+  border: none;
+  padding: 0;
+  margin-bottom: 0.8em;
+}
+
+#contactPage form fieldset:first-of-type {
+  display: flex;
+  gap: 0.8em;
+}
+
+#contactPage form fieldset:nth-of-type(3) div {
+  display: flex;
+  justify-content: space-between;
+}
+
+#contactPage form fieldset:nth-of-type(3) div label {
+  width: fit-content;
+  font-size: 0.8em;
+  /* the label has display flex in line 798 */
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#contactPage form fieldset:nth-of-type(3) div input {
+  width: 0.7em;
+}
+
+#contactPage form fieldset textarea {
+  width: 100%;
+  min-height: 10em;
+  padding: 0.6em;
+  margin-top: 0.3em;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--input-bg);
+  resize: none;
+  font-family: var(--secondary-font);
+}
+
+#contactPage form button {
+  width: 13em;
+  padding: 1em 0;
+  text-align: center;
+
+  font-family: var(--tertiary-font);
+  font-weight: var(--bold-weight);
+  font-size: 0.7em;
+  color: var(--tertiary-color);
   background-color: var(--theme-color);
-  color: var(--tertiary-color);
+  border: solid 0.2em var(--theme-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 0.3em 0.25em var(--shadow-color);
+
+  position: relative;
+  left: calc(50% - 13em / 2);
 }
 
 /* media */
@@ -841,7 +978,7 @@ form:has(input[id="2"]:checked) label[for="2"] {
   }
 
   header nav ul li a {
-    font-size: 1.8em;
+    font-size: 1em;
   }
 
   main {
@@ -897,6 +1034,10 @@ form:has(input[id="2"]:checked) label[for="2"] {
 }
 
 @media screen and (min-width: 1680px) {
+  header nav ul {
+    justify-content: center;
+    gap: 2em;
+  }
   main section:nth-of-type(2) ul {
     padding: 0 10%;
   }
