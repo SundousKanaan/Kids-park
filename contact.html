@@ -171,36 +171,39 @@
         <form>
           <fieldset>
             <label
-              >First name
+              >First name*
 
               <input
                 type="text"
                 id="firstName"
                 name="firstName"
                 placeholder="First name"
+                required
               />
             </label>
 
             <label
-              >Last name
+              >Last name*
 
               <input
                 type="text"
                 id="lastName"
                 name="lastName"
                 placeholder="Last name"
+                required
               />
             </label>
           </fieldset>
 
           <fieldset>
             <label
-              >Email
+              >Email*
               <input
                 type="email"
                 id="email"
                 name="email"
                 placeholder="example@gmail.com"
+                required
               />
             </label>
           </fieldset>
@@ -213,14 +216,26 @@
                 event/birthday</label
               >
               <label
-                ><input type="radio" name="topic" value="trip" /> Book a student
-                trip
+                ><input type="radio" name="topic" value="trip" />
+                Book a student trip
               </label>
               <label
-                ><input type="radio" name="topic" value="other" /> Other</label
+                ><input type="radio" name="topic" value="other" checked />
+                Other</label
               >
             </div>
           </fieldset>
+
+          <fieldset>
+            <p>How can we help you?</p>
+            <select>
+              <option required value="info">Information</option>
+              <option required value="complaint">Complaint</option>
+              <option required value="suggestion">Suggestion</option>
+              <option required value="other">Other</option>
+            </select>
+          </fieldset>
+
           <fieldset>
             <p for="message">Message</p>
             <textarea
@@ -230,7 +245,7 @@
             ></textarea>
           </fieldset>
 
-          <button type="submit" class="btn-red">Send My Message</button>
+          <button type="submit">Send My Message</button>
         </form>
       </section>
     </main>
