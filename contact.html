@@ -216,12 +216,11 @@
                 event/birthday</label
               >
               <label
-                ><input type="radio" name="topic" value="trip" />
+                ><input type="radio" name="topic" value="trip" checked />
                 Book a student trip
               </label>
               <label
-                ><input type="radio" name="topic" value="other" checked />
-                Other</label
+                ><input type="radio" name="topic" value="other" /> Other</label
               >
             </div>
           </fieldset>
@@ -229,10 +228,10 @@
           <fieldset>
             <p>How can we help you?</p>
             <select>
-              <option required value="info">Information</option>
-              <option required value="complaint">Complaint</option>
-              <option required value="suggestion">Suggestion</option>
-              <option required value="other">Other</option>
+              <option value="info">Information</option>
+              <option value="complaint">Complaint</option>
+              <option value="suggestion">Suggestion</option>
+              <option value="other">Other</option>
             </select>
           </fieldset>
 
@@ -244,7 +243,6 @@
               placeholder="Please write your message here ..."
             ></textarea>
           </fieldset>
-
           <button type="submit">Send My Message</button>
         </form>
       </section>
